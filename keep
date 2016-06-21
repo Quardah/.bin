@@ -1,0 +1,3 @@
+#!/bin/sh
+
+chromium --app=https://keep.google.com/u/0/

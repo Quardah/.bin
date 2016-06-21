@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if pidof -s xmobar > /dev/null; then
+   echo 'present';
+   pkill xmobar && xmobar&
+else
+   echo 'non';
+   xmobar&
+fi

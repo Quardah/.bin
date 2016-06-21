@@ -1,0 +1,4 @@
+#!/bin/sh
+nm-applet    2>&1 /dev/null &
+stalonetray --dockapp-mode simple 2>&1 /dev/null
+killall nm-applet

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case "$1" in
+hibernate|suspend)
+  pids=( $(pgrep -f xmobar) )
+    for pid in "${pids[@]}"; do
+      if [[ $pid != $$ ]]; then
+        kill "$pid"
+      fi
+    done
+;;
+thaw|resume)
+  xmobar &
+;;
+*) exit $NA
+;;
+esac

@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# refreshbar: refresh xmobar. 
+
+pids=( $(pgrep -f xmobar) )
+echo ${#pids[@]} 
+if [ ${#pids[@]} -eq 0 ]; then
+  xmobar &
+else
+  for pid in "${pids[@]}"; do
+    if [[ $pid != $$ ]]; then
+      kill "$pid"
+    fi
+  done
+fi

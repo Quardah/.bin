@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pids=( $(pgrep -f xmobar) )
+for pid in "${pids[@]}"; do
+  if [[ $pid != $$ ]]; then
+    kill "$pid"
+  fi
+done
+
+sleep 0.2
+xmobar &

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chromium --app=https://rocketchat.cedille.club/channel/general &
+
+chromium --app=https://messenger.com 
